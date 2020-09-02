@@ -12,58 +12,28 @@ class Post extends StatelessWidget{
     return Container(
       margin: EdgeInsets.only(bottom: 10),
       child:Row(children: <Widget>[
-      
-      Column( // Vertical video thumbnail
-        children: <Widget>[
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: video.thumbnail,
-                fit: BoxFit.fitHeight,
-              ),
-            ),
-          ),
-        ],
-      ),
-      Column( // Video information
-        children: <Widget>[
-          Row( // Video title
-            children: <Widget>[
-              Container(
-                child: Text(video.videoTitle),
-              ),
-            ],
-          ),
-          Row( // Profile pic/username
-            children: <Widget>[
-              Container( //Profile pic
-                height: 35,
-                child: CircleAvatar(backgroundImage: video.profile.profilePicture),
-              ),
-              Container( //Username
-                child: Text(video.profile.profileName),
-              ),
-            ],
-          ),
-          Row( //Views
-            children: <Widget>[
-              Container(
-                child: Text(video.getViewCount() + " views"),
-              ),
-            ],
-          ),
-          Row( //Views
-            children: <Widget>[
-              Container(
-                child: Text("Video posted yesterday"),
-              ),
-            ],
-          ),
-        ],
-      ),
-      ],
-      ),
+        Image(
+          image: video.thumbnail,
+          width: 150
+        ),
+        SizedBox(width: 50,),
+        Column(
+          children: <Widget>[
+            Text(video.videoTitle),
+            SizedBox(height: 10,),
+            Row(children: <Widget>[
+              CircleAvatar(backgroundImage: video.profile.profilePicture,),
+              SizedBox(width: 10),
+              Text(video.profile.profileName),
+            ],),
+            SizedBox(height: 10,),
+            Text(video.getViewCount() + " views"),
+            SizedBox(height: 10,),
+            Text("Video posted yesterday"),
+          ],
+        )  
+      ]
+      )
     );
   }
 
