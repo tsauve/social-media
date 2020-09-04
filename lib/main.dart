@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> getVideos() {
     List<Video> videos = makeVideos();
     List<Widget> posts = [];
-    posts.add(Post(video: videos[0]));
+    posts.add(new Post(videos[0]));
     return posts;
   }
 
