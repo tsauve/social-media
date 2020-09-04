@@ -12,6 +12,10 @@ class Profile {
     return this.profileName;
   }
 
+  String getTagline() {
+    return this.tagline;
+  }
+
   AssetImage getPicture() {
     return this.profilePicture;
   }
