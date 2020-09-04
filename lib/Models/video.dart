@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:social_media/Models/profile.dart';
 
-class Video{
-  AssetImage thumbnail;
-  int viewCount;
-  DateTime uploadDate;
-  String videoTitle;
-  Profile profile;
+class Video {
+  final AssetImage thumbnail;
+  final int viewCount;
+  //final DateTime uploadDate;
+  final String videoTitle;
+  final Profile profile;
 
-  Video(AssetImage thumbnail, int viewCount, String videoTitle, Profile profile) {
-    this.thumbnail = thumbnail;
-    this.viewCount = viewCount;
-    this.videoTitle = videoTitle;
-    this.profile = profile;
-  }
+  Video(this.thumbnail, this.viewCount, this.videoTitle, this.profile);
 
-  String getViewCount(){
+  String getViewCount() {
     return viewCount.toString();
   }
 }

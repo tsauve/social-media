@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Profile{
-  String profileName;
-  AssetImage profilePicture;
-  
-  Profile(String profileName, AssetImage profilePicture){
-    this.profileName = profileName;
-    this.profilePicture = profilePicture;
-  }
+class Profile {
+  final String profileName;
+  final AssetImage profilePicture;
+  final String tagline;
 
-  String getName(){
+  Profile(this.profileName, this.profilePicture,
+      {this.tagline = "Welcome to my youry"});
+
+  String getName() {
     return this.profileName;
   }
 
-  AssetImage getPicture(){
+  AssetImage getPicture() {
     return this.profilePicture;
   }
 }
