@@ -5,8 +5,7 @@ class Profile {
   final AssetImage profilePicture;
   final String tagline;
 
-  Profile(this.profileName, this.profilePicture,
-      {this.tagline = "Welcome to my youry"});
+  Profile(this.profileName, this.profilePicture, this.tagline);
 
   String getName() {
     return this.profileName;
