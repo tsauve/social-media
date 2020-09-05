@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Feed(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: PageView(children: pages));
   }
 }
 
@@ -31,7 +30,7 @@ class _FeedState extends State<Feed> {
     return Scaffold(
         appBar: AppBar(title: Text("Feed"), actions: [
           IconButton(
-              icon: Icon(Icons.add_box),
+              icon: Icon(Icons.account_box_rounded),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -55,8 +54,8 @@ class _FeedState extends State<Feed> {
     return posts;
   }
 
-  Profile profile = new Profile(
-      "Trevor Sauve", AssetImage("assets/profilepics/test_prof.jpg"));
+  Profile profile = new Profile("Trevor Sauve",
+      AssetImage("assets/profilepics/test_prof.jpg"), 'Hello World');
 
   List<Video> makeVideos() {
     List<Video> vids = [];
@@ -78,8 +77,10 @@ class SecondRoute extends StatelessWidget {
   }
 
   ProfileView getProfileView() {
-    Profile profile = new Profile(
-        "Trevor Sauve", AssetImage("assets/profilepics/test_prof.jpg"));
-    return new ProfileView(profile: profile);
+    Profile profile = new Profile("Trevor Sauve",
+        AssetImage("assets/profilepics/test_prof.jpg"), 'Welcome to Youri');
+    return new ProfileView(profile);
   }
 }
+
+List<Widget> pages = [Feed(), SecondRoute()];
